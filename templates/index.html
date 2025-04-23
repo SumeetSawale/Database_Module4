@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Memory Database Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #api-info {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .endpoint {
+            margin-bottom: 5px;
+        }
+        .endpoint strong {
+            color: #007bff;
+        }
+        #database-operations, #table-operations, #record-operations {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        #visualization {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>In-Memory Database Management System</h1>
+
+    </div>
+
+    <div id="database-operations">
+        <h2>Database Operations</h2>
+        <label for="db-name">Database Name:</label>
+        <input type="text" id="db-name">
+        <button onclick="createDatabase()">Create Database</button>
+        <button onclick="deleteDatabase()">Delete Database</button>
+        <button onclick="getDatabases()">List Databases</button>
+    </div>
+
+    <div id="table-operations">
+        <h2>Table Operations</h2>
+        <label for="table-db-name">Database Name:</label>
+        <input type="text" id="table-db-name">
+        <label for="table-name">Table Name:</label>
+        <input type="text" id="table-name">
+        <label for="table-schema">Table Schema (JSON):</label>
+        <textarea id="table-schema"></textarea>
+        <label for="table-search-key">Search Key:</label>
+        <input type="text" id="table-search-key">
+        <button onclick="createTable()">Create Table</button>
+        <button onclick="deleteTable()">Delete Table</button>
+        <button onclick="getTables()">List Tables</button>
+    </div>
+
+    <div id="record-operations">
+        <h2>Record Operations</h2>
+        <label for="record-db-name">Database Name:</label>
+        <input type="text" id="record-db-name">
+        <label for="record-table-name">Table Name:</label>
+        <input type="text" id="record-table-name">
+        <label for="record-id">Record ID (For searching record with a particular id):</label>
+        <input type="text" id="record-id">
+        <label for="record-data">Record Data (JSON):</label>
+        <textarea id="record-data"></textarea>
+        <button onclick="createRecord()">Create Record</button>
+        <button onclick="getRecord()">Get Record</button>
+        <button onclick="updateRecord()">Update Record</button>
+        <button onclick="deleteRecord()">Delete Record</button>
+        <label for="range-start">Range Start:</label>
+        <input type="text" id="range-start">
+        <label for="range-end">Range End:</label>
+        <input type="text" id="range-end">
+        <button onclick="rangeQuery()">Range Query</button>
+    </div>
+
+    <div id="results">
+        <h2>Results</h2>
+        <pre id="results-content"></pre>
+    </div>
+
+    <script>
+        const API_BASE_URL = '/api';
+
+        function displayResults(data) {
+            document.getElementById('results-content').innerText = JSON.stringify(data, null, 2);
+        }
+
+        function getApiInfo() {
+            fetch('/')
+                .then(response => response.json())
+                .then(data => {
+                    const endpointsDiv = document.getElementById('endpoints');
+                    for (const endpoint in data.endpoints) {
+                        const endpointDiv = document.createElement('div');
+                        endpointDiv.classList.add('endpoint');
+                        endpointDiv.innerHTML = `<strong>${endpoint}</strong>: ${data.endpoints[endpoint]}`;
+                        endpointsDiv.appendChild(endpointDiv);
+                    }
+                })
+                .catch(error => console.error('Error fetching API info:', error));
+        }
+
+        function getDatabases() {
+            fetch(`${API_BASE_URL}/databases`)
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error getting databases:', error));
+        }
+
+        function createDatabase() {
+            const dbName = document.getElementById('db-name').value;
+            fetch(`${API_BASE_URL}/databases`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: dbName })
+            })
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error creating database:', error));
+        }
+
+        function deleteDatabase() {
+            const dbName = document.getElementById('db-name').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error deleting database:', error));
+        }
+
+        function getTables() {
+            const dbName = document.getElementById('table-db-name').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables`)
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error getting tables:', error));
+        }
+
+        function createTable() {
+            const dbName = document.getElementById('table-db-name').value;
+            const tableName = document.getElementById('table-name').value;
+            const tableSchema = document.getElementById('table-schema').value;
+            const searchKey = document.getElementById('table-search-key').value;
+            try {
+                const schema = JSON.parse(tableSchema);
+                fetch(`${API_BASE_URL}/databases/${dbName}/tables`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name: tableName, schema: schema, search_key: searchKey })
+                })
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error creating table:', error));
+            } catch (e) {
+                alert("Invalid JSON for Table Schema");
+            }
+        }
+
+        function deleteTable() {
+            const dbName = document.getElementById('table-db-name').value;
+            const tableName = document.getElementById('table-name').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error deleting table:', error));
+        }
+
+        function getRecords() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/records`)
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error getting records:', error));
+        }
+
+        function createRecord() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            const recordData = document.getElementById('record-data').value;
+            try {
+                const data = JSON.parse(recordData);
+                fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/records`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error creating record:', error));
+            } catch (e) {
+                console.log(e);
+                alert("Invalid JSON for Record Data");
+            }
+        }
+
+        function getRecord() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            const recordId = document.getElementById('record-id').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/records/${recordId}`)
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error getting record:', error));
+        }
+
+        function updateRecord() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            const recordId = document.getElementById('record-id').value;
+            const recordData = document.getElementById('record-data').value;
+            try {
+                const data = JSON.parse(recordData);
+                fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/records/${recordId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error updating record:', error));
+            } catch (e) {
+                alert("Invalid JSON for Record Data");
+            }
+        }
+
+        function deleteRecord() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            const recordId = document.getElementById('record-id').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/records/${recordId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error deleting record:', error));
+        }
+
+        
+        function rangeQuery() {
+            const dbName = document.getElementById('record-db-name').value;
+            const tableName = document.getElementById('record-table-name').value;
+            const rangeStart = document.getElementById('range-start').value;
+            const rangeEnd = document.getElementById('range-end').value;
+            fetch(`${API_BASE_URL}/databases/${dbName}/tables/${tableName}/range`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ start: rangeStart, end: rangeEnd })
+            })
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error performing range query:', error));
+        }
+
+        // Load API info on page load
+        getApiInfo();
+    </script>
+</body>
+</html>
