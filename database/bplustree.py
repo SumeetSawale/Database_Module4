@@ -153,7 +153,6 @@ class BPlusTree:
             except ValueError:
                 return False # Key not in this leaf
         else:
-            # --- Internal Node ---
             # Find the child subtree that might contain the key
             i = 0
             while i < len(node.keys) and key >= node.keys[i]:
@@ -172,7 +171,6 @@ class BPlusTree:
 
 
     def _rebalance_child(self, parent, child_index):
-        """Handles underflow in parent.children[child_index] by borrowing or merging."""
         child = parent.children[child_index]
         min_keys = child.min_keys() # Get min keys for this node type
 
@@ -200,7 +198,6 @@ class BPlusTree:
 
 
     def _borrow_from_prev(self, parent, child_index):
-        """Borrows a key from the left sibling."""
         child = parent.children[child_index]
         left_sibling = parent.children[child_index - 1]
         parent_key_index = child_index - 1
@@ -225,7 +222,6 @@ class BPlusTree:
 
 
     def _borrow_from_next(self, parent, child_index):
-        """Borrows a key from the right sibling."""
         child = parent.children[child_index]
         right_sibling = parent.children[child_index + 1]
         parent_key_index = child_index
@@ -310,7 +306,6 @@ class BPlusTree:
 
 
     def _generate_record_html(self, record_data):
-        """Creates HTML label for a separate record node."""
         if not isinstance(record_data, dict):
             return f'<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="lightyellow"><TR><TD>{html.escape(str(record_data))}</TD></TR></TABLE>>'
         html_label = '<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="lightyellow" ALIGN="LEFT">'
@@ -322,7 +317,6 @@ class BPlusTree:
         return html_label
 
     def _discover_nodes_and_edges(self):
-        """Traverses tree, plans nodes (incl. separate records) and edges."""
         node_id_map = {id(self.root): 'node_root'}
         id_counter = 0
         nodes_to_draw = {}
