@@ -1,6 +1,6 @@
 import pickle
 import os
-from table import Table
+from database.table import Table
 
 
 class DatabaseManager:
