@@ -1,4 +1,4 @@
-from bplustree import BPlusTree
+from database.bplustree import BPlusTree
 
 class Table:
     def __init__(self, name, schema, order=8, search_key=None, save_callback=None):
