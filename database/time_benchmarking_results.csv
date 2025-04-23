@@ -1,5 +1,5 @@
 operation,data_structure,input_size,execution_time
-insertion,B+ Tree,100,0.0010390281677246094
+insertion,B+ Tree,100,0.0
 insertion,BruteForce,100,0.0
 search,B+ Tree,100,0.0
 search,BruteForce,100,0.0
@@ -8,54 +8,234 @@ deletion,BruteForce,100,0.0
 update,B+ Tree,100,0.0
 update,BruteForce,100,0.0
 range_query,B+ Tree,100,0.0
-range_query,BruteForce,100,0.0007429122924804688
-mixed_workload,B+ Tree,100,0.0005159378051757812
+range_query,BruteForce,100,0.0
+mixed_workload,B+ Tree,100,0.0
 mixed_workload,BruteForce,100,0.0
-insertion,B+ Tree,500,0.0020110607147216797
-insertion,BruteForce,500,0.0
-search,B+ Tree,500,0.0
-search,BruteForce,500,0.0
-deletion,B+ Tree,500,0.0027954578399658203
-deletion,BruteForce,500,0.0
-update,B+ Tree,500,0.0
-update,BruteForce,500,0.0
-range_query,B+ Tree,500,0.0035681724548339844
-range_query,BruteForce,500,0.0
-mixed_workload,B+ Tree,500,0.010620832443237305
-mixed_workload,BruteForce,500,0.004336833953857422
-insertion,B+ Tree,1000,0.002955913543701172
-insertion,BruteForce,1000,0.0
-search,B+ Tree,1000,0.0
-search,BruteForce,1000,0.0
-deletion,B+ Tree,1000,0.0
-deletion,BruteForce,1000,0.0
-update,B+ Tree,1000,0.0
-update,BruteForce,1000,0.0
-range_query,B+ Tree,1000,0.006561756134033203
-range_query,BruteForce,1000,0.0036482810974121094
-mixed_workload,B+ Tree,1000,0.01752471923828125
-mixed_workload,BruteForce,1000,0.016483545303344727
-insertion,B+ Tree,5000,0.016521215438842773
-insertion,BruteForce,5000,0.006531476974487305
-search,B+ Tree,5000,0.0
-search,BruteForce,5000,0.013794898986816406
-deletion,B+ Tree,5000,0.0
-deletion,BruteForce,5000,0.014605998992919922
-update,B+ Tree,5000,0.01212620735168457
-update,BruteForce,5000,0.005990028381347656
-range_query,B+ Tree,5000,0.09900808334350586
-range_query,BruteForce,5000,0.052016258239746094
-mixed_workload,B+ Tree,5000,0.08254241943359375
-mixed_workload,BruteForce,5000,0.10401463508605957
-insertion,B+ Tree,10000,0.0618281364440918
-insertion,BruteForce,10000,0.007155418395996094
-search,B+ Tree,10000,0.003926753997802734
-search,BruteForce,10000,0.05580425262451172
-deletion,B+ Tree,10000,0.013285636901855469
-deletion,BruteForce,10000,0.06532669067382812
-update,B+ Tree,10000,0.002010345458984375
-update,BruteForce,10000,0.030423402786254883
-range_query,B+ Tree,10000,0.4966311454772949
-range_query,BruteForce,10000,0.2061934471130371
-mixed_workload,B+ Tree,10000,0.16054511070251465
-mixed_workload,BruteForce,10000,0.18140339851379395
+insertion,B+ Tree,600,0.0
+insertion,BruteForce,600,0.0
+search,B+ Tree,600,0.0
+search,BruteForce,600,0.0012891292572021484
+deletion,B+ Tree,600,0.0
+deletion,BruteForce,600,0.0
+update,B+ Tree,600,0.0
+update,BruteForce,600,0.0
+range_query,B+ Tree,600,0.0
+range_query,BruteForce,600,0.0
+mixed_workload,B+ Tree,600,0.005932331085205078
+mixed_workload,BruteForce,600,0.004095792770385742
+insertion,B+ Tree,1100,0.003607511520385742
+insertion,BruteForce,1100,0.0
+search,B+ Tree,1100,0.0010974407196044922
+search,BruteForce,1100,0.0
+deletion,B+ Tree,1100,0.0010004043579101562
+deletion,BruteForce,1100,0.0
+update,B+ Tree,1100,0.0010006427764892578
+update,BruteForce,1100,0.0
+range_query,B+ Tree,1100,0.0034351348876953125
+range_query,BruteForce,1100,0.0010004043579101562
+mixed_workload,B+ Tree,1100,0.010496854782104492
+mixed_workload,BruteForce,1100,0.012158393859863281
+insertion,B+ Tree,1600,0.0020580291748046875
+insertion,BruteForce,1600,0.0
+search,B+ Tree,1600,0.0
+search,BruteForce,1600,0.0012586116790771484
+deletion,B+ Tree,1600,0.0010006427764892578
+deletion,BruteForce,1600,0.0
+update,B+ Tree,1600,0.0
+update,BruteForce,1600,0.0010001659393310547
+range_query,B+ Tree,1600,0.006000041961669922
+range_query,BruteForce,1600,0.0029997825622558594
+mixed_workload,B+ Tree,1600,0.00692439079284668
+mixed_workload,BruteForce,1600,0.014595985412597656
+insertion,B+ Tree,2100,0.0
+insertion,BruteForce,2100,0.0
+search,B+ Tree,2100,0.0
+search,BruteForce,2100,0.0
+deletion,B+ Tree,2100,0.0
+deletion,BruteForce,2100,0.0
+update,B+ Tree,2100,0.0
+update,BruteForce,2100,0.0
+range_query,B+ Tree,2100,0.006009340286254883
+range_query,BruteForce,2100,0.003999471664428711
+mixed_workload,B+ Tree,2100,0.012000799179077148
+mixed_workload,BruteForce,2100,0.010998964309692383
+insertion,B+ Tree,2600,0.0
+insertion,BruteForce,2600,0.0
+search,B+ Tree,2600,0.0
+search,BruteForce,2600,0.0
+deletion,B+ Tree,2600,0.0
+deletion,BruteForce,2600,0.0
+update,B+ Tree,2600,0.0
+update,BruteForce,2600,0.016013383865356445
+range_query,B+ Tree,2600,0.0
+range_query,BruteForce,2600,0.015663623809814453
+mixed_workload,B+ Tree,2600,0.0
+mixed_workload,BruteForce,2600,0.03131866455078125
+insertion,B+ Tree,3100,0.00579524040222168
+insertion,BruteForce,3100,0.0010004043579101562
+search,B+ Tree,3100,0.0
+search,BruteForce,3100,0.0019991397857666016
+deletion,B+ Tree,3100,0.0010013580322265625
+deletion,BruteForce,3100,0.0029985904693603516
+update,B+ Tree,3100,0.0
+update,BruteForce,3100,0.0010004043579101562
+range_query,B+ Tree,3100,0.008512735366821289
+range_query,BruteForce,3100,0.014495611190795898
+mixed_workload,B+ Tree,3100,0.01969456672668457
+mixed_workload,BruteForce,3100,0.016069889068603516
+insertion,B+ Tree,3600,0.015275955200195312
+insertion,BruteForce,3600,0.0
+search,B+ Tree,3600,0.0009992122650146484
+search,BruteForce,3600,0.0030002593994140625
+deletion,B+ Tree,3600,0.0009992122650146484
+deletion,BruteForce,3600,0.004000186920166016
+update,B+ Tree,3600,0.0
+update,BruteForce,3600,0.002000093460083008
+range_query,B+ Tree,3600,0.019220590591430664
+range_query,BruteForce,3600,0.007021427154541016
+mixed_workload,B+ Tree,3600,0.023680686950683594
+mixed_workload,BruteForce,3600,0.025241374969482422
+insertion,B+ Tree,4100,0.008671045303344727
+insertion,BruteForce,4100,0.0013544559478759766
+search,B+ Tree,4100,0.0
+search,BruteForce,4100,0.0027570724487304688
+deletion,B+ Tree,4100,0.0
+deletion,BruteForce,4100,0.0
+update,B+ Tree,4100,0.0
+update,BruteForce,4100,0.0
+range_query,B+ Tree,4100,0.024306535720825195
+range_query,BruteForce,4100,0.012011528015136719
+mixed_workload,B+ Tree,4100,0.020547866821289062
+mixed_workload,BruteForce,4100,0.027660369873046875
+insertion,B+ Tree,4600,0.0077533721923828125
+insertion,BruteForce,4600,0.0010046958923339844
+search,B+ Tree,4600,0.0006544589996337891
+search,BruteForce,4600,0.005004405975341797
+deletion,B+ Tree,4600,0.0020036697387695312
+deletion,BruteForce,4600,0.005996227264404297
+update,B+ Tree,4600,0.0
+update,BruteForce,4600,0.0030002593994140625
+range_query,B+ Tree,4600,0.03281235694885254
+range_query,BruteForce,4600,0.01494288444519043
+mixed_workload,B+ Tree,4600,0.023657798767089844
+mixed_workload,BruteForce,4600,0.030658960342407227
+insertion,B+ Tree,5100,0.0
+insertion,BruteForce,5100,0.0
+search,B+ Tree,5100,0.0
+search,BruteForce,5100,0.01838207244873047
+deletion,B+ Tree,5100,0.0
+deletion,BruteForce,5100,0.0
+update,B+ Tree,5100,0.0
+update,BruteForce,5100,0.014140844345092773
+range_query,B+ Tree,5100,0.03883218765258789
+range_query,BruteForce,5100,0.02303767204284668
+mixed_workload,B+ Tree,5100,0.020417213439941406
+mixed_workload,BruteForce,5100,0.038387298583984375
+insertion,B+ Tree,5600,0.011275053024291992
+insertion,BruteForce,5600,0.0
+search,B+ Tree,5600,0.0
+search,BruteForce,5600,0.004682064056396484
+deletion,B+ Tree,5600,0.0064601898193359375
+deletion,BruteForce,5600,0.004897117614746094
+update,B+ Tree,5600,0.0
+update,BruteForce,5600,0.0
+range_query,B+ Tree,5600,0.1345832347869873
+range_query,BruteForce,5600,0.0199277400970459
+mixed_workload,B+ Tree,5600,0.02894449234008789
+mixed_workload,BruteForce,5600,0.044997215270996094
+insertion,B+ Tree,6100,0.013251304626464844
+insertion,BruteForce,6100,0.0009989738464355469
+search,B+ Tree,6100,0.00099945068359375
+search,BruteForce,6100,0.0024585723876953125
+deletion,B+ Tree,6100,0.0
+deletion,BruteForce,6100,0.015489339828491211
+update,B+ Tree,6100,0.0
+update,BruteForce,6100,0.0
+range_query,B+ Tree,6100,0.06695961952209473
+range_query,BruteForce,6100,0.03313398361206055
+mixed_workload,B+ Tree,6100,0.03145170211791992
+mixed_workload,BruteForce,6100,0.05309009552001953
+insertion,B+ Tree,6600,0.011406660079956055
+insertion,BruteForce,6600,0.002277374267578125
+search,B+ Tree,6600,0.0
+search,BruteForce,6600,0.01282811164855957
+deletion,B+ Tree,6600,0.0022258758544921875
+deletion,BruteForce,6600,0.011229515075683594
+update,B+ Tree,6600,0.0
+update,BruteForce,6600,0.005680561065673828
+range_query,B+ Tree,6600,0.07704901695251465
+range_query,BruteForce,6600,0.03316974639892578
+mixed_workload,B+ Tree,6600,0.038919687271118164
+mixed_workload,BruteForce,6600,0.04409170150756836
+insertion,B+ Tree,7100,0.01677083969116211
+insertion,BruteForce,7100,0.0
+search,B+ Tree,7100,0.0
+search,BruteForce,7100,0.01646876335144043
+deletion,B+ Tree,7100,0.0013637542724609375
+deletion,BruteForce,7100,0.015857458114624023
+update,B+ Tree,7100,0.0
+update,BruteForce,7100,0.0
+range_query,B+ Tree,7100,0.10041308403015137
+range_query,BruteForce,7100,0.04116034507751465
+mixed_workload,B+ Tree,7100,0.04761838912963867
+mixed_workload,BruteForce,7100,0.04598212242126465
+insertion,B+ Tree,7600,0.015697240829467773
+insertion,BruteForce,7600,0.0010821819305419922
+search,B+ Tree,7600,0.0017452239990234375
+search,BruteForce,7600,0.013800621032714844
+deletion,B+ Tree,7600,0.0026428699493408203
+deletion,BruteForce,7600,0.016456127166748047
+update,B+ Tree,7600,0.0
+update,BruteForce,7600,0.0
+range_query,B+ Tree,7600,0.10124516487121582
+range_query,BruteForce,7600,0.04783987998962402
+mixed_workload,B+ Tree,7600,0.04523921012878418
+mixed_workload,BruteForce,7600,0.03660321235656738
+insertion,B+ Tree,8100,0.0156252384185791
+insertion,BruteForce,8100,0.004415035247802734
+search,B+ Tree,8100,0.0
+search,BruteForce,8100,0.010268926620483398
+deletion,B+ Tree,8100,0.0
+deletion,BruteForce,8100,0.018480300903320312
+update,B+ Tree,8100,0.0
+update,BruteForce,8100,0.01471400260925293
+range_query,B+ Tree,8100,0.11872339248657227
+range_query,BruteForce,8100,0.052725791931152344
+mixed_workload,B+ Tree,8100,0.04614591598510742
+mixed_workload,BruteForce,8100,0.04953408241271973
+insertion,B+ Tree,8600,0.0838778018951416
+insertion,BruteForce,8600,0.007285594940185547
+search,B+ Tree,8600,0.0
+search,BruteForce,8600,0.016678810119628906
+deletion,B+ Tree,8600,0.002561330795288086
+deletion,BruteForce,8600,0.020267009735107422
+update,B+ Tree,8600,0.0
+update,BruteForce,8600,0.012260198593139648
+range_query,B+ Tree,8600,0.1181650161743164
+range_query,BruteForce,8600,0.06513214111328125
+mixed_workload,B+ Tree,8600,0.05148029327392578
+mixed_workload,BruteForce,8600,0.06493282318115234
+insertion,B+ Tree,9100,0.020534992218017578
+insertion,BruteForce,9100,0.013250589370727539
+search,B+ Tree,9100,0.0013358592987060547
+search,BruteForce,9100,0.016268014907836914
+deletion,B+ Tree,9100,0.0
+deletion,BruteForce,9100,0.016566038131713867
+update,B+ Tree,9100,0.0010464191436767578
+update,BruteForce,9100,0.0015444755554199219
+range_query,B+ Tree,9100,0.1503911018371582
+range_query,BruteForce,9100,0.06253218650817871
+mixed_workload,B+ Tree,9100,0.05336928367614746
+mixed_workload,BruteForce,9100,0.06674981117248535
+insertion,B+ Tree,9600,0.019056081771850586
+insertion,BruteForce,9600,0.0
+search,B+ Tree,9600,0.0
+search,BruteForce,9600,0.015935897827148438
+deletion,B+ Tree,9600,0.014991283416748047
+deletion,BruteForce,9600,0.01777958869934082
+update,B+ Tree,9600,0.0
+update,BruteForce,9600,0.016750097274780273
+range_query,B+ Tree,9600,0.1619124412536621
+range_query,BruteForce,9600,0.06924819946289062
+mixed_workload,B+ Tree,9600,0.05017852783203125
+mixed_workload,BruteForce,9600,0.0502476692199707
