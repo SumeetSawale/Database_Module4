@@ -1,5 +1,5 @@
 operation,data_structure,input_size,execution_time
-insertion,B+ Tree,100,0.000812530517578125
+insertion,B+ Tree,100,0.0010390281677246094
 insertion,BruteForce,100,0.0
 search,B+ Tree,100,0.0
 search,BruteForce,100,0.0
@@ -8,54 +8,54 @@ deletion,BruteForce,100,0.0
 update,B+ Tree,100,0.0
 update,BruteForce,100,0.0
 range_query,B+ Tree,100,0.0
-range_query,BruteForce,100,0.0
-mixed_workload,B+ Tree,100,0.0
+range_query,BruteForce,100,0.0007429122924804688
+mixed_workload,B+ Tree,100,0.0005159378051757812
 mixed_workload,BruteForce,100,0.0
-insertion,B+ Tree,500,0.0010039806365966797
+insertion,B+ Tree,500,0.0020110607147216797
 insertion,BruteForce,500,0.0
 search,B+ Tree,500,0.0
 search,BruteForce,500,0.0
-deletion,B+ Tree,500,0.0
+deletion,B+ Tree,500,0.0027954578399658203
 deletion,BruteForce,500,0.0
 update,B+ Tree,500,0.0
 update,BruteForce,500,0.0
-range_query,B+ Tree,500,0.0010046958923339844
+range_query,B+ Tree,500,0.0035681724548339844
 range_query,BruteForce,500,0.0
-mixed_workload,B+ Tree,500,0.001999378204345703
-mixed_workload,BruteForce,500,0.0009996891021728516
-insertion,B+ Tree,1000,0.0010001659393310547
-insertion,BruteForce,1000,0.0010008811950683594
+mixed_workload,B+ Tree,500,0.010620832443237305
+mixed_workload,BruteForce,500,0.004336833953857422
+insertion,B+ Tree,1000,0.002955913543701172
+insertion,BruteForce,1000,0.0
 search,B+ Tree,1000,0.0
 search,BruteForce,1000,0.0
 deletion,B+ Tree,1000,0.0
 deletion,BruteForce,1000,0.0
 update,B+ Tree,1000,0.0
-update,BruteForce,1000,0.0010025501251220703
-range_query,B+ Tree,1000,0.000997781753540039
-range_query,BruteForce,1000,0.0009999275207519531
-mixed_workload,B+ Tree,1000,0.004741191864013672
-mixed_workload,BruteForce,1000,0.008024454116821289
-insertion,B+ Tree,5000,0.00899815559387207
-insertion,BruteForce,5000,0.0010008811950683594
+update,BruteForce,1000,0.0
+range_query,B+ Tree,1000,0.006561756134033203
+range_query,BruteForce,1000,0.0036482810974121094
+mixed_workload,B+ Tree,1000,0.01752471923828125
+mixed_workload,BruteForce,1000,0.016483545303344727
+insertion,B+ Tree,5000,0.016521215438842773
+insertion,BruteForce,5000,0.006531476974487305
 search,B+ Tree,5000,0.0
-search,BruteForce,5000,0.0059986114501953125
-deletion,B+ Tree,5000,0.0010006427764892578
-deletion,BruteForce,5000,0.006044626235961914
-update,B+ Tree,5000,0.0
-update,BruteForce,5000,0.0029990673065185547
-range_query,B+ Tree,5000,0.039321184158325195
-range_query,BruteForce,5000,0.018319368362426758
-mixed_workload,B+ Tree,5000,0.026752233505249023
-mixed_workload,BruteForce,5000,0.02733445167541504
-insertion,B+ Tree,10000,0.032576560974121094
-insertion,BruteForce,10000,0.0005168914794921875
-search,B+ Tree,10000,0.0
-search,BruteForce,10000,0.016253948211669922
-deletion,B+ Tree,10000,0.0
-deletion,BruteForce,10000,0.03700137138366699
-update,B+ Tree,10000,0.0010006427764892578
-update,BruteForce,10000,0.011831283569335938
-range_query,B+ Tree,10000,0.18190741539001465
-range_query,BruteForce,10000,0.0725564956665039
-mixed_workload,B+ Tree,10000,0.06467485427856445
-mixed_workload,BruteForce,10000,0.06358838081359863
+search,BruteForce,5000,0.013794898986816406
+deletion,B+ Tree,5000,0.0
+deletion,BruteForce,5000,0.014605998992919922
+update,B+ Tree,5000,0.01212620735168457
+update,BruteForce,5000,0.005990028381347656
+range_query,B+ Tree,5000,0.09900808334350586
+range_query,BruteForce,5000,0.052016258239746094
+mixed_workload,B+ Tree,5000,0.08254241943359375
+mixed_workload,BruteForce,5000,0.10401463508605957
+insertion,B+ Tree,10000,0.0618281364440918
+insertion,BruteForce,10000,0.007155418395996094
+search,B+ Tree,10000,0.003926753997802734
+search,BruteForce,10000,0.05580425262451172
+deletion,B+ Tree,10000,0.013285636901855469
+deletion,BruteForce,10000,0.06532669067382812
+update,B+ Tree,10000,0.002010345458984375
+update,BruteForce,10000,0.030423402786254883
+range_query,B+ Tree,10000,0.4966311454772949
+range_query,BruteForce,10000,0.2061934471130371
+mixed_workload,B+ Tree,10000,0.16054511070251465
+mixed_workload,BruteForce,10000,0.18140339851379395

@@ -1,61 +1,33 @@
-operation,data_structure,input_size,execution_time
-insertion,B+ Tree,100,0.007098674774169922
-insertion,BruteForce,100,0.0
-search,B+ Tree,100,0.0005857944488525391
-search,BruteForce,100,0.0
-deletion,B+ Tree,100,0.0
-deletion,BruteForce,100,0.0
-update,B+ Tree,100,0.0
-update,BruteForce,100,0.0
-range_query,B+ Tree,100,0.0
-range_query,BruteForce,100,0.0
-mixed_workload,B+ Tree,100,0.0013072490692138672
-mixed_workload,BruteForce,100,0.0
-insertion,B+ Tree,500,0.0027856826782226562
-insertion,BruteForce,500,0.0020265579223632812
-search,B+ Tree,500,0.0
-search,BruteForce,500,0.0
-deletion,B+ Tree,500,0.0
-deletion,BruteForce,500,0.0
-update,B+ Tree,500,0.0
-update,BruteForce,500,0.0
-range_query,B+ Tree,500,0.0
-range_query,BruteForce,500,0.0
-mixed_workload,B+ Tree,500,0.009346485137939453
-mixed_workload,BruteForce,500,0.0015711784362792969
-insertion,B+ Tree,1000,0.003619670867919922
-insertion,BruteForce,1000,0.0
-search,B+ Tree,1000,0.0
-search,BruteForce,1000,0.0020105838775634766
-deletion,B+ Tree,1000,0.0
-deletion,BruteForce,1000,0.0
-update,B+ Tree,1000,0.0
-update,BruteForce,1000,0.0
-range_query,B+ Tree,1000,0.005199909210205078
-range_query,BruteForce,1000,0.0
-mixed_workload,B+ Tree,1000,0.007103681564331055
-mixed_workload,BruteForce,1000,0.012162446975708008
-insertion,B+ Tree,5000,0.016746044158935547
-insertion,BruteForce,5000,0.0
-search,B+ Tree,5000,0.0
-search,BruteForce,5000,0.016290664672851562
-deletion,B+ Tree,5000,0.0
-deletion,BruteForce,5000,0.010230064392089844
-update,B+ Tree,5000,0.0
-update,BruteForce,5000,0.0023953914642333984
-range_query,B+ Tree,5000,0.1274404525756836
-range_query,BruteForce,5000,0.031995296478271484
-mixed_workload,B+ Tree,5000,0.043081045150756836
-mixed_workload,BruteForce,5000,0.05972766876220703
-insertion,B+ Tree,10000,0.04093503952026367
-insertion,BruteForce,10000,0.0
-search,B+ Tree,10000,0.0
-search,BruteForce,10000,0.050000905990600586
-deletion,B+ Tree,10000,0.002137899398803711
-deletion,BruteForce,10000,0.04739546775817871
-update,B+ Tree,10000,0.0
-update,BruteForce,10000,0.019043922424316406
-range_query,B+ Tree,10000,0.3425014019012451
-range_query,BruteForce,10000,0.15218782424926758
-mixed_workload,B+ Tree,10000,0.09273910522460938
-mixed_workload,BruteForce,10000,0.1039583683013916
+data_structure,input_type,node_size,input_size,peak_memory
+BruteForce,unsorted,N/A,100,0.00809478759765625
+BruteForce,sorted,N/A,100,0.00809478759765625
+B+ Tree,unsorted,10,100,0.005859375
+B+ Tree,sorted,10,100,0.00563812255859375
+B+ Tree,unsorted,15,100,0.0040130615234375
+B+ Tree,sorted,15,100,0.00446319580078125
+B+ Tree,unsorted,20,100,0.0038604736328125
+B+ Tree,sorted,20,100,0.003997802734375
+BruteForce,unsorted,N/A,500,0.03255462646484375
+BruteForce,sorted,N/A,500,0.03182220458984375
+B+ Tree,unsorted,10,500,0.03903961181640625
+B+ Tree,sorted,10,500,0.04291534423828125
+B+ Tree,unsorted,15,500,0.0258941650390625
+B+ Tree,sorted,15,500,0.03086090087890625
+B+ Tree,unsorted,20,500,0.020782470703125
+B+ Tree,sorted,20,500,0.02344512939453125
+BruteForce,unsorted,N/A,1000,0.06441497802734375
+BruteForce,sorted,N/A,1000,0.06441497802734375
+B+ Tree,unsorted,10,1000,0.0804290771484375
+B+ Tree,sorted,10,1000,0.09073638916015625
+B+ Tree,unsorted,15,1000,0.05724334716796875
+B+ Tree,sorted,15,1000,0.06635284423828125
+B+ Tree,unsorted,20,1000,0.046844482421875
+B+ Tree,sorted,20,1000,0.05145263671875
+BruteForce,unsorted,N/A,5000,0.25502777099609375
+BruteForce,sorted,N/A,5000,0.25502777099609375
+B+ Tree,unsorted,10,5000,0.416351318359375
+B+ Tree,sorted,10,5000,0.47139739990234375
+B+ Tree,unsorted,15,5000,0.3001670837402344
+B+ Tree,sorted,15,5000,0.34769344329833984
+B+ Tree,unsorted,20,5000,0.2519073486328125
+B+ Tree,sorted,20,5000,0.272430419921875
