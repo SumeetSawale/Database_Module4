@@ -1,16 +1,21 @@
-from database.bplustree import BPlusTree
+from bplustree import BPlusTree
 
 class Table:
-    def __init__(self, name, schema, order=8, search_key=None):
+    def __init__(self, name, schema, order=8, search_key=None, save_callback=None):
         self.name = name
         self.schema = schema
         self.order = order
         self.search_key = search_key
+        self.save_callback = save_callback
 
         if self.search_key is None or self.search_key not in schema:
             raise ValueError("A valid `search_key` must be provided and exist in the schema.")
 
         self.data = BPlusTree(order=order)
+
+    def _save(self):
+        if self.save_callback:
+            self.save_callback()
 
     def validate_record(self, record):
         """
@@ -34,6 +39,7 @@ class Table:
         if self.data.search(key) is not None:
             raise ValueError(f"Record with key '{key}' already exists.")
         self.data.insert(key, record)
+        self._save()
         print(f"Record with key '{key}' inserted successfully.")
 
     def get(self, record_id):
@@ -62,6 +68,7 @@ class Table:
         self.validate_record(new_record)
         if not self.data.update(record_id, new_record):
             raise RuntimeError("Update failed unexpectedly.")
+        self._save()
         print(f"Record with key '{record_id}' updated successfully.")
 
     def delete(self, record_id):
@@ -71,6 +78,7 @@ class Table:
         if self.data.search(record_id) is None:
             raise ValueError(f"No record found with key '{record_id}' to delete.")
         self.data.delete(record_id)
+        self._save()
         print(f"Record with key '{record_id}' deleted successfully.")
 
     def range_query(self, start_value, end_value):

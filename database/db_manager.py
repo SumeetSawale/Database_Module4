@@ -1,6 +1,6 @@
 import pickle
 import os
-from database.table import Table
+from table import Table
 
 
 class DatabaseManager:
@@ -40,7 +40,7 @@ class DatabaseManager:
             raise ValueError(f"Database '{db_name}' does not exist.")
         if table_name in self.databases[db_name]:
             raise ValueError(f"Table '{table_name}' already exists in database '{db_name}'.")
-        self.databases[db_name][table_name] = Table(table_name, schema, order, search_key)
+        self.databases[db_name][table_name] = Table(table_name, schema, order, search_key,save_callback=self.save)
         self.save()
         print(f"Table '{table_name}' created successfully in database '{db_name}'.")
 
